@@ -1,14 +1,26 @@
-.index-grid {
+.article-grid {
     display: grid;
     grid-template-columns: 1fr 800px 1fr;
 }
 
 @media only screen and (max-width: 1000px) {
-    .index-grid {
+    .article-grid {
         grid-template-columns: 1fr 8fr 1fr;
     }
 }
 
 .mid-col {
     grid-column: 2/3;
+}
+
+.article-grid {
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 84px;
+}
+
+img {
+    max-width: 100%;
 }

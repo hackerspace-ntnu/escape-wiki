@@ -1,6 +1,8 @@
 .index-grid {
     display: grid;
     grid-template-columns: 1fr 800px 1fr;
+    grid-template-rows: 1fr 38px 1fr;
+    height: 100vh;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -11,6 +13,7 @@
 
 .mid-col {
     grid-column: 2/3;
+    grid-row: 2/3;
 }
 
 .form-grid {
