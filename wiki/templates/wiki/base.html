@@ -1,0 +1,44 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.8">
+        <title>
+          {% block title %}
+            ER
+          {% endblock title %}
+        </title>
+
+        <link rel="icon" type="image/png" href="{% static "wiki/img/favicon.png" %}" />
+        <link rel="stylesheet" type="text/css" href="{% static "wiki/css/semantic.min.css" %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
+
+        <link rel="stylesheet" href="{% static "wiki/css/style.css" %}">
+        <link rel="stylesheet" href="{% static "wiki/css/footer.css" %}">
+        <link rel="stylesheet" href="{% static "wiki/css/header.css" %}">
+
+        <script src="{% static "wiki/js/jquery.min.js" %}"></script>
+        <script src="{% static "wiki/js/semantic.min.js" %}"></script>
+        {% block head %}
+        {% endblock head %}
+    </head>
+
+    <body>
+        {% block header %}
+            {% include 'wiki/header.html' %}
+        {% endblock header %}
+
+        {% block content %}
+        {% endblock content %}
+
+        {% block footer %}
+            {% include 'wiki/footer.html' %}
+        {% endblock footer %}
+    </body>
+
+</html>

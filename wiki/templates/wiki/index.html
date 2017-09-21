@@ -1,0 +1,23 @@
+{% extends 'wiki/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static "wiki/css/index.css" %}">
+{% endblock head %}
+
+{% block content %}
+    <div class="index-grid">
+        <div class="mid-col">
+            <h2>Søk</h2>
+            <form class="ui form" target="" method="post">
+                {% csrf_token %}
+                <div class="form-grid">
+                    <div class="field">
+                        <input type="text" name="code" placeholder="code">
+                    </div>
+                    <button class="ui button right" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

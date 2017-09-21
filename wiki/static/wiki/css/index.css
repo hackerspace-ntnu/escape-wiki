@@ -1,0 +1,30 @@
+.index-grid {
+    display: grid;
+    grid-template-columns: 1fr 800px 1fr;
+}
+
+@media only screen and (max-width: 1000px) {
+    .index-grid {
+        grid-template-columns: 1fr 8fr 1fr;
+    }
+}
+
+.mid-col {
+    grid-column: 2/3;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+}
+
+.field {
+    grid-column: 1/2;
+}
+
+.button {
+    grid-column: 2/3;
+    margin: 5px !important;
+    margin-top: 0 !important;
+    height: 38px;
+}
