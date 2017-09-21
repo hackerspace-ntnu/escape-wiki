@@ -1,0 +1,18 @@
+{% extends 'wiki/base.html' %}
+{% load staticfiles %}
+{% load wiki_markdown %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static "articles/css/article.css" %}">
+{% endblock head %}
+
+{% block content %}
+    <div class="index-grid">
+        <div class="mid-col">
+            <h2>{{ article.title }}</h2>
+            {% autoescape off %}
+                {{ article.content|markdown }}
+            {% endautoescape %}
+        </div>
+    </div>
+{% endblock content %}

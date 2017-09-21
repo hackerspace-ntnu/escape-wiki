@@ -1,0 +1,14 @@
+.index-grid {
+    display: grid;
+    grid-template-columns: 1fr 800px 1fr;
+}
+
+@media only screen and (max-width: 1000px) {
+    .index-grid {
+        grid-template-columns: 1fr 8fr 1fr;
+    }
+}
+
+.mid-col {
+    grid-column: 2/3;
+}
