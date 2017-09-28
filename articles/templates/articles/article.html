@@ -9,6 +9,7 @@
 {% block content %}
     <div class="article-grid">
         <div class="mid-col">
+            <div style="height: 130px;"></div>
             <h1>{{ article.title }}</h1>
             {% autoescape off %}
                 {{ article.content|markdown }}

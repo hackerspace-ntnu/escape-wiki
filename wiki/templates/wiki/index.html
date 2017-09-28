@@ -5,6 +5,9 @@
     <link rel="stylesheet" type="text/css" href="{% static "wiki/css/index.css" %}">
 {% endblock head %}
 
+{% block header %}
+{% endblock header %}
+
 {% block content %}
     <div class="index-grid">
         <div class="mid-col">
@@ -15,7 +18,7 @@
                     <div class="field">
                         <input type="text" name="code" placeholder="code">
                     </div>
-                    <button class="ui button right" type="submit">Submit</button>
+                    <button class="ui blue button right" type="submit">Submit</button>
                 </div>
             </form>
         </div>

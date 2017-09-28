@@ -1,0 +1,18 @@
+<div id="fillall">
+    <div id="header">
+        <div id="header-top"></div>
+        <div id="header-mid"></div>
+        <div id="header-bottom"></div>
+        <div id="header-angle"></div>
+        <div id="article-title">{{ article.code }}</div>
+        <form id="header-form" class="ui form" target="" method="post">
+            {% csrf_token %}
+            <div class="form-grid">
+                <div class="field">
+                    <input type="text" name="code" placeholder="code">
+                </div>
+                <button class="ui blue button right" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
