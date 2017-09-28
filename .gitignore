@@ -1,4 +1,6 @@
 .idea/
+*.sqlite3
+*local_settings.*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
