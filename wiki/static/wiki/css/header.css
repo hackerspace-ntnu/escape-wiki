@@ -18,13 +18,11 @@
 #header-top {
     grid-column: 1/5;
     grid-row: 1/3;
-    background-color: #d3d4d5;
 }
 
 #header-bottom {
     grid-column: 1/3;
     grid-row: 2/4;
-    background-color: #d3d4d5;
     position: sticky;
     top: 0;
 }
@@ -32,9 +30,12 @@
 #header-mid {
     grid-column: 1/5;
     grid-row: 2/3;
-    background-color: #d3d4d5;
     position: sticky;
     top: 0;
+}
+
+.fargeheader {
+    background-color: #607d8b;
 }
 
 #header-angle {
@@ -42,8 +43,9 @@
     grid-row: 2/4;
     width: 0;
     height: 0;
+    background-color: transparent;
     border: 50px solid transparent;
-    border-top: 50px solid #d3d4d5;
+    border-top: 50px solid #607d8b;
     transform: translateX(-50%) translateY(50px);
     margin-bottom: -100px;
     position: sticky;
@@ -78,6 +80,8 @@
 }
 
 .button {
+    background-color: #8eacbb !important;
+    color: #242424 !important;
     grid-column: 2/3;
     margin: 5px !important;
     margin-top: 0 !important;

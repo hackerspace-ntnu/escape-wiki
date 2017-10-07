@@ -13,10 +13,9 @@ class Index(View):
             }
             return render(request, 'articles/article.html', context)
         except Article.DoesNotExist:
-            if kwargs['url']:
-                return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/101')
 
-        return render(request, 'wiki/index.html')
+        #return render(request, 'wiki/index.html')
 
 
     def post(self, request, *args, **kwargs):
