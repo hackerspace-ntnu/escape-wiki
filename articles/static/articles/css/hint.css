@@ -1,0 +1,33 @@
+
+
+label {
+    cursor: pointer;
+}
+
+#hard {
+    height: 0;
+    overflow: hidden;
+
+}
+
+#hardcheckbox {
+    display: none;
+}
+
+#hardcheckbox:checked + #hard {
+    height: 400px;
+}
+
+#medium {
+    height: 0;
+    overflow: hidden;
+
+}
+
+#mediumcheckbox {
+    display: none;
+}
+
+#mediumcheckbox:checked + #medium {
+    height: 400px;
+}

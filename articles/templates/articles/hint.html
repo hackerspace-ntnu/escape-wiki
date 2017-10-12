@@ -1,0 +1,44 @@
+{ % extends "wiki/base.html % }
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static "articles/css/hint.css" %}">
+{% endblock head %}
+
+{% block content %}
+    <label for="showblock">Show Block</label>
+    <input type="checkbox" id="showblock" />
+
+    <div id="block">
+        Hello World
+    </div>
+{% endblock content %}
+
+<label for="hardcheckbox">Hard</label>
+<input type="checkbox" id="hardcheckbox" />
+
+<div id="hard"}
+    {% block hardhint %}
+
+    {% endblock hardhint %}
+</div>
+
+<label for="mediumcheckbox">Medium</label>
+<input type="checkbox" id="mediumcheckbox" />
+
+<div id="medium"}
+    {% block mediumhint %}
+
+    {% endblock mediumhint %}
+</div>
+
+<label for="easycheckbox" class="ui green button">Easy</label>
+<input type="checkbox" id="easycheckbox" />
+
+<div id="easy"}
+    {% block easyhint %}
+
+    {% endblock easyhint %}
+</div>
+
+
+
