@@ -1,44 +1,62 @@
-{ % extends "wiki/base.html % }
+{% extends "wiki/base.html" %}
+{% load staticfiles %}
+{% load wiki_markdown %}
 
 {% block head %}
     <link rel="stylesheet" type="text/css" href="{% static "articles/css/hint.css" %}">
 {% endblock head %}
 
 {% block content %}
-    <label for="showblock">Show Block</label>
-    <input type="checkbox" id="showblock" />
+    <div class="article-grid">
+        <div class="mid-col">
+            <div style="height: 130px;"></div>
+            <h1>{{ article.title }}</h1>
+            {% autoescape off %}
+                {{ article.content|markdown}}
+            {% endautoescape %}
 
-    <div id="block">
-        Hello World
+            <label for="showblock">Show Block</label>
+            <input type="checkbox" id="showblock" />
+
+            <div id="block">
+                Hello World
+            </div>
+        </div>
     </div>
+
 {% endblock content %}
 
-<label for="hardcheckbox">Hard</label>
-<input type="checkbox" id="hardcheckbox" />
 
-<div id="hard"}
-    {% block hardhint %}
+{% block hardhint %}
+    <label for="hardcheckbox" class="ui red button"><input type="checkbox" id="hardcheckbox">Hard</label>    
+    <div id="hard">
+            {{ hint.hardhint }}
+    </div>
+    <div id="hintspacer"></div>
+{% endblock hardhint %}
 
-    {% endblock hardhint %}
-</div>
 
-<label for="mediumcheckbox">Medium</label>
-<input type="checkbox" id="mediumcheckbox" />
 
-<div id="medium"}
-    {% block mediumhint %}
+{% block mediumhint %}
+    <label for="mediumcheckbox"><input type="checkbox" id="mediumcheckbox">Medium</label>
 
-    {% endblock mediumhint %}
-</div>
+    <div id="medium">
+            {{ hint.mediumhint }}
+    </div>
+    <div id="hintspacer"></div>
+{% endblock mediumhint %}
+
 
 <label for="easycheckbox" class="ui green button">Easy</label>
 <input type="checkbox" id="easycheckbox" />
 
-<div id="easy"}
-    {% block easyhint %}
-
-    {% endblock easyhint %}
-</div>
-
+{% block easyhint %}
+    <label for="easycheckbox" class="ui secondary button">Easy</label>
+    <input type="checkbox" id="easycheckbox" />
+    <div id="easy">
+            {{ hint.easyhint }}
+    </div>
+    <div id="hintspacer"></div>
+{% endblock easyhint %}
 
 

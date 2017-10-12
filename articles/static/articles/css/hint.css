@@ -1,7 +1,44 @@
+.article-grid {
+    display: grid;
+    grid-template-columns: 1fr 800px 1fr;
+}
 
+@media only screen and (max-width: 1000px) {
+    .article-grid {
+        grid-template-columns: 1fr 8fr 1fr;
+    }
+}
+
+.mid-col {
+    grid-column: 2/3;
+}
+
+.article-grid {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+h1 {
+    font-size: 48px;
+}
 
 label {
-    cursor: pointer;
+    cursor: pointer; !important;
+    background-color: #0ea432;
+}
+
+#showblock {
+  display:none;
+}
+
+#showblock:checked + #block {
+    height: 20vh;
+}
+
+#block {
+    height: 0;
+    overflow: hidden;
+
 }
 
 #hard {
@@ -11,7 +48,7 @@ label {
 }
 
 #hardcheckbox {
-    display: none;
+    /*display: none;*/
 }
 
 #hardcheckbox:checked + #hard {
@@ -30,4 +67,22 @@ label {
 
 #mediumcheckbox:checked + #medium {
     height: 400px;
+}
+
+#easy {
+    height: 0;
+    overflow: hidden;
+
+}
+
+#easycheckbox {
+    display: none;
+}
+
+#easycheckbox:checked + #easy {
+    height: 400px;
+}
+
+#hintspacer {
+    height: 10px;
 }

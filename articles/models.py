@@ -14,3 +14,6 @@ class Hint(Article):
     hardhint = models.TextField(max_length=4000, blank=True)
     mediumhint = models.TextField(max_length=4000, blank=True)
     easyhint = models.TextField(max_length=4000, blank=True)
+
+    def __str__(self):
+        return self.title
