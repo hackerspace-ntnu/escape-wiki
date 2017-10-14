@@ -9,16 +9,21 @@ class Index(View):
     def get(self, request, *args, **kwargs):
         try:
             context = {
-                'article': Article.objects.get(code=kwargs['url']),
-                'hint': Hint.objects.get(code=kwargs['url']),
+                'article': Hint.objects.get(code=kwargs['url']),
             }
 
             return render(request, 'articles/hint.html', context)
-        except Article.DoesNotExist or Hint.DoesNotExist:
-            return HttpResponseRedirect('/101')
+        except Article.DoesNotExist:
+            try:
+                context = {
+                    'article': Article.objects.get(code=kwargs['url']),
+                }
+                return render(request, 'articles/article.html', context)
+            except Hint.DoesNotExist:
+                return HttpResponseRedirect('/101')
 
 
-        return render(request, 'wiki/index.html')
+        #return render(request, 'wiki/index.html')
 
 
     def post(self, request, *args, **kwargs):

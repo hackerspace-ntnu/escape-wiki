@@ -22,65 +22,25 @@ h1 {
     font-size: 48px;
 }
 
-label {
-    cursor: pointer; !important;
-    background-color: #0ea432;
-}
 
-#showblock {
-  display:none;
-}
-
-#showblock:checked + #block {
-    height: 20vh;
-}
-
-#block {
-    height: 0;
-    overflow: hidden;
-
-}
 
 #hard {
-    height: 0;
-    overflow: hidden;
+    display:none;
 
 }
 
-#hardcheckbox {
-    /*display: none;*/
-}
 
-#hardcheckbox:checked + #hard {
-    height: 400px;
-}
 
 #medium {
-    height: 0;
-    overflow: hidden;
+    display:none;
 
 }
 
-#mediumcheckbox {
-    display: none;
-}
 
-#mediumcheckbox:checked + #medium {
-    height: 400px;
 }
 
 #easy {
-    height: 0;
-    overflow: hidden;
-
-}
-
-#easycheckbox {
-    display: none;
-}
-
-#easycheckbox:checked + #easy {
-    height: 400px;
+    display:none;
 }
 
 #hintspacer {

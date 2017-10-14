@@ -6,57 +6,54 @@
     <link rel="stylesheet" type="text/css" href="{% static "articles/css/hint.css" %}">
 {% endblock head %}
 
-{% block content %}
-    <div class="article-grid">
-        <div class="mid-col">
-            <div style="height: 130px;"></div>
-            <h1>{{ article.title }}</h1>
-            {% autoescape off %}
-                {{ article.content|markdown}}
-            {% endautoescape %}
 
-            <label for="showblock">Show Block</label>
-            <input type="checkbox" id="showblock" />
+        {% block content %}
+            <div class="article-grid">
+               <div class="mid-col">
+                    <div style="height: 130px;"></div>
+                    <h1>{{ article.title }}</h1>
+                    {% autoescape off %}
+                        {{ article.content|markdown}}
+                        {{ article.hardhint|markdown }}<br>
+                    <script type="text/javascript">
+                        function hardToggle() {
+                            var x = document.getElementById("hard");
 
-            <div id="block">
-                Hello World
+                            if (x.style.display === "none") {
+                                x.style.display = "block";
+                                alert(" changed from none to block");
+                            } else if (x.style.display === "block") {
+                                x.style.display = "none";
+                                alert("changed from block to none");
+                            }
+                            alert("nothing happened")
+                        }
+                        function codeAddress() {
+                            alert('ok');
+                        }
+                        window.onload = hardToggle;
+                    </script>
+
+
+                    <button onClick = "hardToggle()">Hard</button>
+                    <div id="hard">
+                            {{ article.hardhint }}
+                    </div>
+                    <div id="hintspacer"></div>
+                    <button>Medium</button>
+                    <div id="medium">
+                            {{ article.mediumhint }}
+                    </div>
+                    <div id="hintspacer"></div>
+
+                    <button>Easy</button>
+                    <div id="easy">
+                            {{ article.easyhint }}
+                    </div>
+                    <div id="hintspacer"></div>
+                   {% endautoescape %}
             </div>
         </div>
-    </div>
 
-{% endblock content %}
-
-
-{% block hardhint %}
-    <label for="hardcheckbox" class="ui red button"><input type="checkbox" id="hardcheckbox">Hard</label>    
-    <div id="hard">
-            {{ hint.hardhint }}
-    </div>
-    <div id="hintspacer"></div>
-{% endblock hardhint %}
-
-
-
-{% block mediumhint %}
-    <label for="mediumcheckbox"><input type="checkbox" id="mediumcheckbox">Medium</label>
-
-    <div id="medium">
-            {{ hint.mediumhint }}
-    </div>
-    <div id="hintspacer"></div>
-{% endblock mediumhint %}
-
-
-<label for="easycheckbox" class="ui green button">Easy</label>
-<input type="checkbox" id="easycheckbox" />
-
-{% block easyhint %}
-    <label for="easycheckbox" class="ui secondary button">Easy</label>
-    <input type="checkbox" id="easycheckbox" />
-    <div id="easy">
-            {{ hint.easyhint }}
-    </div>
-    <div id="hintspacer"></div>
-{% endblock easyhint %}
-
+        {% endblock content %}
 
