@@ -3,10 +3,14 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100%;
     display: grid;
     grid-template-columns: 1fr 300px 500px 1fr;
     grid-template-rows: 100px 50px 50px;
+}
+
+#header.sticky {
+    position: fixed;
+    margin-top: -100px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -23,14 +27,12 @@
 #header-bottom {
     grid-column: 1/3;
     grid-row: 2/4;
-    position: sticky;
     top: 0;
 }
 
 #header-mid {
     grid-column: 1/5;
     grid-row: 2/3;
-    position: sticky;
     top: 0;
 }
 
@@ -48,7 +50,6 @@
     border-top: 50px solid #607d8b;
     transform: translateX(-50%) translateY(50px);
     margin-bottom: -100px;
-    position: sticky;
     top: 0;
 }
 
@@ -60,7 +61,6 @@
     font-size: 30px;
     padding-top: 65px;
     color: #fff;
-    position: sticky;
     top: 0;
 }
 
