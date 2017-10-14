@@ -1,5 +1,8 @@
-$(function() {
-    setTimeout(function () {
-        $('#header').css('height', $(document).height());
-    }, 10);
+$(window).scroll(function(){
+    if ($(window).scrollTop() >= 100) {
+       $('#header').addClass('sticky');
+    }
+    else {
+       $('#header').removeClass('sticky');
+    }
 });
