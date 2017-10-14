@@ -1,0 +1,52 @@
+{% extends 'wiki/base.html' %}
+
+{% load staticfiles %}
+{% load wiki_markdown %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static "articles/css/hint.css" %}">
+{% endblock head %}
+
+{% block content %}
+    <div class="article-grid">
+       <div class="mid-col">
+            <div style="height: 130px;"></div>
+            <h1>{{ article.title }}</h1>
+            {% autoescape off %}
+                {{ article.content|markdown}}
+            {% endautoescape %}
+            <div class="ui-accordion">
+                <div class="title">
+                    <i class="dropdown icon"></i>
+                    Hard
+                </div>
+                <div id="hard" class="content">
+                        <p>{{ article.hardhint }}</p>
+                </div>
+                <script>
+                $('.ui.accordion').accordion();
+                </script>
+                <div id="hintspacer"></div>
+
+                <div class="title">
+                    <i class="dropdown icon"></i>
+                    Medium
+                </div>
+                <div id="medium" class="content">
+                        <p>{{ article.mediumhint }}</p>
+                </div>
+                <div id="hintspacer"></div>
+
+
+                <div class="title">
+                    <i class="dropdown icon"></i>
+                    Easy
+                </div>
+                <div id="easy" class="content">
+                        <p>{{ article.easyhint }}</p>
+                </div>
+                <div id="hintspacer"></div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
