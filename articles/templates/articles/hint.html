@@ -24,27 +24,31 @@
                     <p>{{ article.hardhint }}</p>
 
                     <div id="hintspacer"></div>
-                    <div class="title ui orange basic button">
-                        <i class="dropdown icon"></i>
-                        Medium
-                    </div>
-
-                    <div id="medium" class="content">
-                        <p>{{ article.mediumhint }}</p>
-
-                        <div id="hintspacer"></div>
-                        <div class="title ui green basic button">
+                    <div class="ui accordion">
+                        <div class="title ui orange basic button">
                             <i class="dropdown icon"></i>
-                            Easy
+                            Medium
                         </div>
-                        <div id="easy" class="content">
-                            <p>{{ article.easyhint }}</p>
+
+                        <div id="medium" class="content">
+                            <p>{{ article.mediumhint }}</p>
+
                             <div id="hintspacer"></div>
+                                <div class="ui accordion">
+                                <div class="title ui green basic button">
+                                    <i class="dropdown icon"></i>
+                                    Easy
+                                </div>
+                                <div id="easy" class="content">
+                                    <p>{{ article.easyhint }}</p>
+                                    <div id="hintspacer"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <script>
-                $('.ui.accordion').accordion();
+                $('.ui.accordion').first().accordion();
                 </script>
             </div>
         </div>
