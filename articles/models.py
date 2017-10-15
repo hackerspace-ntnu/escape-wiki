@@ -8,7 +8,7 @@ class Article(models.Model):
     creation_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.title
+        return self.code
 class Hint(Article):
     hardhint = models.TextField(max_length=4000, blank=True)
     mediumhint = models.TextField(max_length=4000, blank=True)
